@@ -153,8 +153,7 @@ class RnnListener(torch.nn.Module):
 
         spk_msg_emb = torch.matmul(spk_logit,self.emb.weight)
         spk_msg_emb = self.drop(spk_msg_emb)
-
-        pack = torch.nn.utils.rnn.pack_padded_sequence(spk_msg_emb, spk_msg_lens, batch_first=True, enforce_sorted = False)
+        pack = torch.nn.utils.rnn.pack_padded_sequence(spk_msg_emb, spk_msg_lens.cpu(), batch_first=True, enforce_sorted = False)
 
         _, h_n = self.rnn(pack, h_0)
 

@@ -95,16 +95,16 @@ def check_dataset_sanity(args):
         assert (args.src, args.trg) == ("en", "de") or (args.src, args.trg) == ("de", "en")
 
 def scr_path():
-    return "" #enter your root
+    return "/miniscratch/singhals/ECNMT/" #enter your root
 
-def saved_results_path():
-    return "" #enter your root
+def saved_results_path(pth="/miniscratch/singhals/ECNMT/"):
+    return pth + 'savedir' #enter your root
 
-def multi30k_reorg_path():
-    return "" #enter your root
+def multi30k_reorg_path(pth="/miniscratch/singhals/ECNMT/"):
+    return pth + "multi30k_reorg" #enter your root
 
-def coco_path():
-    return "" #enter your root
+def coco_path(pth="/miniscratch/singhals/ECNMT/"):
+    return pth + "coco_new" #enter your root
 
 def sort_per_len(caps):
     lens = [(idx, len(cap)) for idx, cap in enumerate(caps)]
